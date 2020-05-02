@@ -18,6 +18,7 @@ export const Container = styled.div<ContainerProps>`
 
     nav {
       a {
+        position: relative;
         color: #fff;
         text-decoration: none;
         font-size: 16px;
@@ -27,8 +28,17 @@ export const Container = styled.div<ContainerProps>`
           margin-left: 32px;
         }
 
-        &:hover {
+        &:not(.active):hover {
           opacity: 0.6;
+        }
+
+        &.active:before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          bottom: -10px;
+          background-color: #ff872c;
         }
       }
     }
